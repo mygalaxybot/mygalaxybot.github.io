@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyGalaxy</title>
+    <link rel="icon" href="favicon.ico" type="https://i.ibb.co/x5zmGWM/pfp.png">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #000;
+            color: #ECF0F1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            
+        }
+
+        #content {
+            text-align: center;
+        }
+
+        #logo {
+            max-width: 150px;
+            height: auto;
+            border-radius: 50%; 
+            margin-bottom: 20px;
+            animation: spin 2s linear infinite; 
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        #btnInicio {
+            background-color: purple;
+            color: white;
+            padding: 12px 24px;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        #btnInicio:hover {
+            background-color: purple;
+        }
+
+        #btnInicio:active {
+            transform: scale(0.95);
+        }
+        
+        .main{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    height: 1px;
+    width: 1px;
+    background-color: #fff;
+    border-radius: 50%;
+    box-shadow: -24vw -44vh 2px 2px #fff,38vw -4vh 0px 0px #fff,-20vw -48vh 1px 2px #fff,-39vw 38vh 3px 1px #fff,-42vw -11vh 0px 3px #fff,12vw 15vh 3px 3px #fff,42vw 6vh 3px 2px #fff,-8vw 9vh 0px 2px #fff,34vw -38vh 1px 0px #fff,-17vw 45vh 3px 1px #fff,22vw -36vh 3px 2px #fff,-42vw 1vh 1px 0px #fff;/*I have only kept a few layers for readability here*/
+}
+    </style>
+</head>
+<body>
+    <div class="main"></div>
+
+    <div id="content">
+        <img id="logo" src="https://i.ibb.co/x5zmGWM/pfp.png" alt="Logo de MyGalaxy Bot">
+        <br>
+        <a href="inicio.html">
+            <button id="btnInicio">Ir a MyGalaxy</button>
+        </a>
+    </div>
+
+    <script>
+
+function randomNumber(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min
+}
+
+const STAR_COUNT = 100
+let result = ""
+for(let i = 0; i < STAR_COUNT; i++){
+    result += `${randomNumber(-50, 50)}vw ${randomNumber(-50, 50)}vh ${randomNumber(0, 3)}px ${randomNumber(0, 3)}px #fff,`
+}
+console.log(result.substring(0, result.length - 1))
+
+    </script>
+
+</body>
+</html>
+
+

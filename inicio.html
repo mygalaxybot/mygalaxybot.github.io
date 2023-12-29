@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="favicon.ico" type="https://i.ibb.co/x5zmGWM/pfp.png">
+
+    <title>Inicio - MyGalaxy</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(180deg, #141b2d, #461c61); 
+            color: #ECF0F1;
+            min-height: 100vh; 
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            padding: 1em;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: rgba(0, 0, 0, 0.5);
+            transition: background-color 0.3s ease;
+        }
+
+        header:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        #logoHeader {
+            max-width: 50px;
+            height: auto;
+            border-radius: 50%;
+            animation: spin 5s linear infinite;
+        }
+
+        #navLinks {
+            display: flex;
+            gap: 20px;
+        }
+
+        #navLinks a {
+            text-decoration: none;
+            color: #ECF0F1;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        #navLinks a:hover {
+            color: #6a5acd;
+        }
+
+        #mainContent {
+            flex: 1; 
+            text-align: center;
+            padding: 100px 20px;
+        }
+
+        #logo {
+            max-width: 100px;
+            height: auto;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            animation: spin 5s linear infinite;
+        }
+
+        #btnAñademe {
+            background-color: purple;
+            color: white;
+            padding: 12px 24px;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        #btnAñademe:hover {
+            background-color: #6a5acd;
+            box-shadow: 0 0 10px rgba(106, 90, 205, 0.8);
+        }
+
+        @media screen and (max-width: 600px) {
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            #navLinks {
+                flex-direction: column;
+                align-items: flex-start;
+                margin-top: 20px;
+            }
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <img id="logoHeader" src="https://i.ibb.co/x5zmGWM/pfp.png" alt="Logo de MyGalaxy Bot">
+        <div id="navLinks">
+            <a href="inicio.html">Invítame</a>
+            <a href="desarrolladores.html">Desarrolladores</a>
+            <a href="comandos.html">Comandos</a>
+            <a href="https://discord.gg/2xxXCyS3M9">Soporte</a>
+        </div>
+    </header>
+
+    <div id="mainContent">
+        <a href="https://discord.com/api/oauth2/authorize?client_id=1190342875280576604&permissions=8&scope=bot+applications.commands">
+            <img id="logo" src="https://i.ibb.co/x5zmGWM/pfp.png" alt="Logo de MyGalaxy">
+            <br>
+            <button id="btnAñademe">¡Añádeme!</button>
+        </a>
+    </div>
+
+    <script>
+        document.getElementById('logo').addEventListener('mouseenter', function() {
+            this.style.transform = 'scale(1.1)';
+            this.style.boxShadow = '0 0 10px rgba(106, 90, 205, 0.8)';
+        });
+
+        document.getElementById('logo').addEventListener('mouseleave', function() {
+            this.style.transform = 'scale(1)';
+            this.style.boxShadow = 'none';
+        });
+    </script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
