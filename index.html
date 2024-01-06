@@ -6,30 +6,104 @@
     <title>MyGalaxy</title>
         <link rel="icon" href="https://i.ibb.co/x5zmGWM/pfp.png" type="image/x-icon">
     <link rel="shortcut icon" href="https://i.ibb.co/x5zmGWM/pfp.png" type="image/x-icon">
-    <style>
-        body {
+          body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #000;
+            background: linear-gradient(180deg, #141b2d, #461c61); 
             color: #ECF0F1;
+            min-height: 100vh; 
             display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            
+            flex-direction: column;
         }
 
-        #content {
+        header {
+            padding: 1em;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: rgba(0, 0, 0, 0.5);
+            transition: background-color 0.3s ease;
+        }
+
+        header:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        #logoHeader {
+            max-width: 50px;
+            height: auto;
+            border-radius: 50%;
+            animation: spin 5s linear infinite;
+        }
+
+        #navLinks {
+            display: flex;
+            gap: 20px;
+        }
+
+        #navLinks a {
+            text-decoration: none;
+            color: #ECF0F1;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        #navLinks a:hover {
+            color: #6a5acd;
+        }
+
+        #mainContent {
+            flex: 1; 
             text-align: center;
+            padding: 100px 20px;
+        }
+
+        #contentContainer {
+            max-width: 350px;
+            margin: 0 auto;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 25px;
+            border-radius: 10px;
+            margin-bottom: 20px;
         }
 
         #logo {
-            max-width: 150px;
+            max-width: 100px;
             height: auto;
-            border-radius: 50%; 
-            margin-bottom: 20px;
-            animation: spin 2s linear infinite; 
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            animation: spin 5s linear infinite;
+        }
+
+        #btnAñademe {
+            background-color: purple;
+            color: white;
+            padding: 10px 5px;
+            font-size: 17px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        #btnAñademe:hover {
+            background-color: #6a5acd;
+            box-shadow: 0 0 10px rgba(106, 90, 205, 0.8);
+        }
+
+        @media screen and (max-width: 600px) {
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            #navLinks {
+                flex-direction: column;
+                align-items: flex-start;
+                margin-top: 20px;
+            }
         }
 
         @keyframes spin {
@@ -37,62 +111,56 @@
             100% { transform: rotate(360deg); }
         }
 
-        #btnInicio {
-            background-color: purple;
-            color: white;
-            padding: 12px 24px;
-            font-size: 18px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
         }
 
-        #btnInicio:hover {
-            background-color: purple;
+        .content {
+            padding: 26px;
         }
-
-        #btnInicio:active {
-            transform: scale(0.95);
+        .blurredContent {
+            filter: blur(15px); 
         }
-        
-        .main{
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    height: 1px;
-    width: 1px;
-    background-color: #fff;
-    border-radius: 50%;
-    box-shadow: -24vw -44vh 2px 2px #fff,38vw -4vh 0px 0px #fff,-20vw -48vh 1px 2px #fff,-39vw 38vh 3px 1px #fff,-42vw -11vh 0px 3px #fff,12vw 15vh 3px 3px #fff,42vw 6vh 3px 2px #fff,-8vw 9vh 0px 2px #fff,34vw -38vh 1px 0px #fff,-17vw 45vh 3px 1px #fff,22vw -36vh 3px 2px #fff,-42vw 1vh 1px 0px #fff;/*I have only kept a few layers for readability here*/
-}
     </style>
 </head>
 <body>
-    <div class="main"></div>
 
-    <div id="content">
-        <img id="logo" src="https://i.ibb.co/x5zmGWM/pfp.png" alt="Logo de MyGalaxy Bot">
-        <br>
-        <a href="inicio.html">
-            <button id="btnInicio">Ir a MyGalaxy</button>
-        </a>
-    </div>
+    <header>
+        <img id="logoHeader" src="https://i.ibb.co/x5zmGWM/pfp.png" alt="Logo de MyGalaxy Bot">
+        <div id="navLinks">
+           
+            <a href="index.html">Inicio</a>
+            <a href="desarrolladores.html">Desarrolladores</a>
+            <a href="comandos.html">Comandos</a>
+            <a href="https://discord.gg/2xxXCyS3M9">Soporte</a>
+            
+        </div>
+    </header>
 
-    <script>
-
-function randomNumber(min, max) {
-    return Math.floor(Math.random() * (max - min + 1)) + min
-}
-
-const STAR_COUNT = 100
-let result = ""
-for(let i = 0; i < STAR_COUNT; i++){
-    result += `${randomNumber(-50, 50)}vw ${randomNumber(-50, 50)}vh ${randomNumber(0, 3)}px ${randomNumber(0, 3)}px #fff,`
-}
-console.log(result.substring(0, result.length - 1))
-
-    </script>
+    <div id="mainContent">
+        <div id="contentContainer">
+            <img id="logo" src="https://i.ibb.co/x5zmGWM/pfp.png" alt="Logo de MyGalaxy">
+            <br>
+            <span style="font-size: 20px; font-weight: bold; color: white;">MyGalaxy</span>
+            <br>
+            <a href="https://discord.com/api/oauth2/authorize?client_id=1190342875280576604&permissions=8&scope=bot+applications.commands">
+                <button id="btnAñademe">¡Añádeme!</button>
+            </a>
+        </div>
+    
+    <div id="mainContent" class="blurredContent">
+        <div id="contentContainer">
+            <img id="logo" src="https://cdn.discordapp.com/attachments/1190335476410880080/1190789583500218448/asdasaddd.jpg?ex=65a31438&is=65909f38&hm=cf7dffd0d7030b791957712da7c112e05fb89aede3c437c40ef602e48b720e06&" alt="Logo de MyGalaxy">
+            <br>
+            <span style="font-size: 24px; font-weight: bold; color: white;">MyGalaxy 2</span>
+            <br>
+            <a href="https://discord.com/api/oauth2/authorize?client_id=1190342875280576604&permissions=8&scope=bot+applications.commands">
+                <button id="btnAñademe">¡Añádeme!</button>
+            </a>
+        </div>
+   
+      
 
 </body>
 </html>
