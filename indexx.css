@@ -1,0 +1,284 @@
+body {
+    background: linear-gradient(180deg, #141b2d, #461c61);
+    color: #ECF0F1;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+   scrollbar-width: none;
+}
+
+        header {
+            padding: 1em;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: rgba(0, 0, 0, 0.5);
+            transition: background-color 0.3s ease;
+        }
+
+        header:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        #logoHeader {
+            max-width: 50px;
+            height: auto;
+            border-radius: 50%;
+            animation: spin 5s linear infinite;
+        }
+
+        #navLinks {
+            display: flex;
+            gap: 20px;
+        }
+
+        #navLinks a {
+            text-decoration: none;
+            color: #ECF0F1;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        #navLinks a:hover {
+            color: #6a5acd;
+        }
+
+        #mainContent {
+            flex: 1; 
+            text-align: center;
+            padding: 100px 20px;
+        }
+
+        #contentContainer {
+            max-width: 250px;
+            margin: 0 auto;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 25px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        #logo {
+            max-width: 100px;
+            height: auto;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            animation: spin 5s linear infinite;
+        }
+
+        #btnAñademe {
+            background-color: purple;
+            color: white;
+            padding: 10px 5px;
+            font-size: 17px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+            margin-top: 10px;
+        }
+
+        #btnAñademe:hover {
+            background-color: #6a5acd;
+            box-shadow: 0 0 10px rgba(106, 90, 205, 0.8);
+        }
+
+        @media screen and (max-width: 600px) {
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            #navLinks {
+                flex-direction: column;
+                align-items: flex-start;
+                margin-top: 20px;
+            }
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .content {
+            padding: 26px;
+        }
+        .blurredContent {
+            filter: blur(15px); 
+        }
+        
+        .footer {
+            background-color: #273036;
+        }
+        .pie-pagina{
+    width: 100%;
+    background-color: #273036;
+}
+.pie-pagina .grupo-1{
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap:50px;
+    padding: 45px 0px;
+}
+.pie-pagina .grupo-1 .box figure{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.pie-pagina .grupo-1 .box figure img{
+    width: 250px;
+}
+.pie-pagina .grupo-1 .box h2{
+    color: #fff;
+    margin-bottom: 25px;
+    font-size: 20px;
+}
+.pie-pagina .grupo-1 .box p{
+    color: #efefef;
+    margin-bottom: 10px;
+}
+.pie-pagina .grupo-1 .red-social a {
+    display: inline-block;
+    text-decoration: none;
+    width: 45px;
+    height: 45px;
+    line-height: 45px;
+    color: #fff;
+    margin-right: 10px;
+    background-color: #273036
+    text-align center;
+    
+}
+.pie-pagina .grupo-1 .red-social a:hover{
+    color: aqua;
+}
+.pie-pagina .grupo-2{
+    background-color: #273036;
+    padding: 15px 10px;
+    text-align: center;
+    color: #fff;
+}
+.pie-pagina .grupo-2 small{
+    font-size: 15px;
+}
+@media screen and (max-width:800px){
+    .pie-pagina .grupo-1{
+        width: 90%;
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap:30px;
+        padding: 35px 0px;
+    }
+}
+#cas {
+    display: flex;
+}
+
+#image {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    margin-right: 20px;
+}
+
+#text {
+    font-size: 24px;
+    opacity: 1; 
+    margin-top: 200px; 
+    transition: transform 0.5s;
+    animation: moverTexto 2s linear infinite;
+}
+
+
+
+@keyframes moverTexto {
+    0% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(20px);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+
+@media only screen and (max-width: 768px) {
+    #cas {
+        flex-direction: column; 
+        align-items: center;
+    }
+
+    #text {
+        margin-top: 10px; 
+    }
+}
+@keyframes separarFlechas {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(5px);
+    }
+    100% {
+      transform: translateY(1);
+    }
+  }
+
+  .icon-tabler-chevrons-down path {
+    animation: separarFlechas 2s infinite;
+  }
+  .card {
+    width: 100%;
+    background-color: #18171c;
+    color: white;
+  }
+  #contentContainer:hover {
+    transform: scale(1.1); 
+    transition: transform 0.3s ease; 
+    box-shadow: 0 0 15px rgba(106, 90, 205, 0.8); 
+}
+
+#btnAñademe:hover {
+    transform: scale(1.1);
+    transition: transform 0.3s ease; 
+    box-shadow: 0 0 10px rgba(106, 90, 205, 0.8);
+}
+
+
+
+.imagen-card {
+    width: 50px; 
+    height: 50px; 
+    border-radius: 50%; 
+    object-fit: cover; 
+    margin-right: 10px; 
+}
+#logo1 {
+            max-width: 100px;
+            height: auto;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+       
+        }
+
+        .card {
+        transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    }
+
+    .card:hover {
+        transform: scale(1.05); 
+        box-shadow: 0 0 15px lightblue; 
+    }
