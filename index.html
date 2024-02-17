@@ -4,258 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="favicon.ico" type="https://i.ibb.co/x5zmGWM/pfp.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+    crossorigin="anonymous">
 
     <title>MyGalaxy</title>
-    <script src="https://kit.fontawesome.com/7ec9de106b.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" integrity="sha384-4LISF5TTJX/fLmGSxO53rV4miRxdg84mZsxmO8Rx5jGtp/LbrixFETvWa5a6sESd" crossorigin="anonymous">
+    <link rel="icon" href="https://i.ibb.co/x5zmGWM/pfp.png" type="image/x-icon">
+    <link rel="shortcut icon" href="https://i.ibb.co/x5zmGWM/pfp.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/indexx.css">
     <style>
-  body {
-    background: linear-gradient(180deg, #141b2d, #461c61);
-    color: #ECF0F1;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-}
-
-
-        header {
-            padding: 1em;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background-color: rgba(0, 0, 0, 0.5);
-            transition: background-color 0.3s ease;
-        }
-
-        header:hover {
-            background-color: rgba(0, 0, 0, 0.8);
-        }
-
-        #logoHeader {
-            max-width: 50px;
-            height: auto;
-            border-radius: 50%;
-            animation: spin 5s linear infinite;
-        }
-
-        #navLinks {
-            display: flex;
-            gap: 20px;
-        }
-
-        #navLinks a {
-            text-decoration: none;
-            color: #ECF0F1;
-            font-weight: bold;
-            transition: color 0.3s ease;
-        }
-
-        #navLinks a:hover {
-            color: #6a5acd;
-        }
-
-        #mainContent {
-            flex: 1; 
-            text-align: center;
-            padding: 100px 20px;
-        }
-
-        #contentContainer {
-            max-width: 250px;
-            margin: 0 auto;
-            background-color: rgba(0, 0, 0, 0.5);
-            padding: 25px;
-            border-radius: 10px;
-            margin-bottom: 20px;
-        }
-
-        #logo {
-            max-width: 100px;
-            height: auto;
-            border-radius: 50%;
-            margin: 0 auto 20px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            animation: spin 5s linear infinite;
-        }
-
-        #btnAñademe {
-            background-color: purple;
-            color: white;
-            padding: 10px 5px;
-            font-size: 17px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s ease, box-shadow 0.3s ease;
-            margin-top: 10px;
-        }
-
-        #btnAñademe:hover {
-            background-color: #6a5acd;
-            box-shadow: 0 0 10px rgba(106, 90, 205, 0.8);
-        }
-
-        @media screen and (max-width: 600px) {
-            header {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-
-            #navLinks {
-                flex-direction: column;
-                align-items: flex-start;
-                margin-top: 20px;
-            }
-        }
-
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-
-        body {
-            margin: 0;
-            font-family: 'Arial', sans-serif;
-        }
-
-        .content {
-            padding: 26px;
-        }
-        .blurredContent {
-            filter: blur(15px); 
-        }
-        
-        .footer {
-            background-color: #273036;
-        }
-        .pie-pagina{
-    width: 100%;
-    background-color: #273036;
-}
-.pie-pagina .grupo-1{
-    width: 100%;
-    max-width: 1200px;
-    margin: auto;
-    display:grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap:50px;
-    padding: 45px 0px;
-}
-.pie-pagina .grupo-1 .box figure{
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.pie-pagina .grupo-1 .box figure img{
-    width: 250px;
-}
-.pie-pagina .grupo-1 .box h2{
-    color: #fff;
-    margin-bottom: 25px;
-    font-size: 20px;
-}
-.pie-pagina .grupo-1 .box p{
-    color: #efefef;
-    margin-bottom: 10px;
-}
-.pie-pagina .grupo-1 .red-social a {
-    display: inline-block;
-    text-decoration: none;
-    width: 45px;
-    height: 45px;
-    line-height: 45px;
-    color: #fff;
-    margin-right: 10px;
-    background-color: #273036
-    text-align center;
-    
-}
-.pie-pagina .grupo-1 .red-social a:hover{
-    color: aqua;
-}
-.pie-pagina .grupo-2{
-    background-color: #273036;
-    padding: 15px 10px;
-    text-align: center;
-    color: #fff;
-}
-.pie-pagina .grupo-2 small{
-    font-size: 15px;
-}
-@media screen and (max-width:800px){
-    .pie-pagina .grupo-1{
-        width: 90%;
-        grid-template-columns: repeat(1, 1fr);
-        grid-gap:30px;
-        padding: 35px 0px;
-    }
-}
-#cas {
-    display: flex;
-}
-
-#image {
-    width: 100%;
-    max-width: 500px;
-    height: auto;
-    margin-right: 20px;
-}
-
-#text {
-    font-size: 24px;
-    opacity: 1; 
-    margin-top: 200px; 
-    transition: transform 0.5s;
-    animation: moverTexto 2s linear infinite;
-}
-
-
-
-@keyframes moverTexto {
-    0% {
-        transform: translateX(0);
-    }
-    50% {
-        transform: translateX(20px);
-    }
-    100% {
-        transform: translateX(0);
-    }
-}
-
-
-@media only screen and (max-width: 768px) {
-    #cas {
-        flex-direction: column; 
-        align-items: center;
-    }
-
-    #text {
-        margin-top: 10px; 
-    }
-}
-@keyframes separarFlechas {
-    0% {
-      transform: translateY(0);
-    }
-    50% {
-      transform: translateY(5px);
-    }
-    100% {
-      transform: translateY(1);
-    }
-  }
-
-  .icon-tabler-chevrons-down path {
-    animation: separarFlechas 2s infinite;
-  }
-
 
 
     </style>
 </head>
 <body>
+
 
     <header>
         <img id="logoHeader" src="https://i.ibb.co/x5zmGWM/pfp.png" alt="Logo de MyGalaxy Bot">
@@ -265,55 +29,69 @@
             <a href="desarrolladores.html">Desarrolladores</a>
             <a href="comandos.html">Comandos</a>
             <a href="https://discord.gg/2xxXCyS3M9">Soporte</a>
+            <a href="suge.html">Sugerencia</a>
             
         </div>
     </header>
 
+
+
     <div id="mainContent">
         <div id="contentContainer">
-            <img id="logo" src="https://i.ibb.co/x5zmGWM/pfp.png" alt="Logo de MyGalaxy">
+            <img id="logo1" src="https://i.ibb.co/x5zmGWM/pfp.png" alt="Logo de MyGalaxy">
             <br>
             <span style="font-size: 20px; font-weight: bold; color: white;">MyGalaxy</span>
             <br>
             <a href="https://discord.com/api/oauth2/authorize?client_id=1190342875280576604&permissions=8&scope=bot+applications.commands">
-                <button id="btnAñademe">¡Añádeme!</button>
+                <button id="btnAñademe">¡Añádeme! </button>
             </a>
         </div>
     
-    <div id="mainContent" class="blurredContent">
+    <div id="mainContent">
         <div id="contentContainer">
-            <img id="logo" src="https://ibb.co/Jtc7sNw" alt="Logo de MyGalaxy">
+            <img id="logo1" src="mygalaxy 2.jpg" alt="Logo de MyGalaxy">
             <br>
             <span style="font-size: 24px; font-weight: bold; color: white;">MyGalaxy 2</span>
             <br>
-            <a href="https://discord.com/api/oauth2/authorize?client_id=1190342875280576604&permissions=8&scope=bot+applications.commands">
+            <a href="https://discord.com/api/oauth2/authorize?client_id=1191415875794903103&permissions=8&scope=bot%20applications.commands">
                 <button id="btnAñademe">¡Añádeme!</button>
             </a>
         </div>
+        <a href="#cas">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevrons-down w-full items-center" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="white" fill="none" stroke-linecap="round" stroke-linejoin="round" style="color: white;">
+              <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+              <path d="M7 7l5 5l5 -5"></path>
+              <path d="M7 13l5 5l5 -5"></path>
+            </svg>
+          </a>
     </div>
-    <a href="#cas">
-        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevrons-down w-full items-center" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="white" fill="none" stroke-linecap="round" stroke-linejoin="round" style="color: white;">
-          <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-          <path d="M7 7l5 5l5 -5"></path>
-          <path d="M7 13l5 5l5 -5"></path>
-        </svg>
-      </a>
+
       
-      
-      <div class="cas">
-        <img id="image" src="https://ibb.co/jTWHfmP" alt="Imagen">
-        <p id="text">Escucha música en cualquier lugar, incluso en las galaxias más lejanas...</p>
-      </div>
-      
-      <div class="cas">
-        <img id="image" src="https://ibb.co/jTWHfmP" alt="Imagen">
-        <p id="text">¡No te memorices comandos! Utiliza SlashCommand.</p>
+<section id="cas">
+    <div class="card">
+        <h5 class="card-header">ESTADISTICAS<i class="bi bi-house-door-fill"></i></h5>
+        <div class="card-body">
+          <p class="card-text">Servidores: 60+<i class="bi bi-houses"></i></p>
+          <p class="card-text">Usuarios: 100k+<i class="bi bi-person-fill"></i></p>
+        
+        </div>
       </div>
     
+      <div class="card">
+        <h5 class="card-header">TOP SERVERS<i class="bi bi-arrow-up-circle-fill"></i></h5>
+        <div class="card-body">
+        <img src="rickyserver.jpg" alt="Image" class="imagen-card">
+          <p class="card-text">Usuarios: 80k+<i class="bi bi-person-fill"></i></p>
+          <img src="markiserver.png" alt="Image" class="imagen-card">
+          <p class="card-text">Usuarios: 18k+ <i class="bi bi-person-fill"></i></p>
+        
+        </div>
+      </div>
+ 
+ 
+    
     </div>
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-        <path fill="#273036" fill-opacity="1" d="M0,192L34.3,186.7C68.6,181,137,171,206,170.7C274.3,171,343,181,411,170.7C480,160,549,128,617,133.3C685.7,139,754,181,823,197.3C891.4,213,960,203,1029,186.7C1097.1,171,1166,149,1234,149.3C1302.9,149,1371,171,1406,181.3L1440,192L1440,320L1405.7,320C1371.4,320,1303,320,1234,320C1165.7,320,1097,320,1029,320C960,320,891,320,823,320C754.3,320,686,320,617,320C548.6,320,480,320,411,320C342.9,320,274,320,206,320C137.1,320,69,320,34,320L0,320Z"></path>
-    </svg>
+   
     <footer>
         <footer class="pie-pagina">
             <div class="grupo-1">
@@ -329,25 +107,25 @@
                     
                 </div>
                 <div class="box">
-                    <h2>Nuestras redes✔️</h2>
+                    <h2>Nuestras redes <i class="bi bi-gem"></i></h2>
                     <div class="red-social">
-                        <a href="redes.html" class="fa fa-instagram"></a>
-                        <a href="redes.html" class="fa fa-twitter"></a>
+                        <a href="redes.html" class="bi bi-instagram"></a>
+                        <a href="redes.html" class="bi bi-twitter"></a>
                         
                     </div>
                 </div>
             </div>
+            <div class= "grupo-2"> 
+     
+        </div>
             <div class="grupo-2">
                 <small>&copy; 2024 <b>MyGalaxy🌌</b> - Todos los Derechos Reservados.</small>
+           
             </div>
+            
         </footer>
 
     </footer>
-
-
-
-      
-
 </body>
 </html>
 
