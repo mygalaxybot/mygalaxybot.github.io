@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MireyaTOnta</title>
+    <style>
+        body {
+            background-color: #222;
+        }
+        .profile {
+  width: 100%;
+  margin: 20px auto;
+  font-family: Arial, sans-serif;
+  color: white;
+  background-color: #222;
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  height: auto;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.username {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.follow, .message, .more {
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.follow {
+  background-color: #00a0ff;
+  color: white;
+}
+
+.message {
+  background-color: #333;
+  color: white;
+}
+
+.more {
+  background-color: #333;
+  color: white;
+}
+
+.icons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px 0;
+}
+
+.icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #333;
+  margin: 0 5px;
+}
+
+.bio {
+  margin: 10px 0;
+}
+
+.text {
+  font-size: 14px;
+}
+
+.mention {
+  color: #00a0ff;
+}
+
+.followers {
+  font-size: 12px;
+  color: #999;
+}
+
+.stats {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin: 10px 0;
+}
+
+.stat {
+  text-align: center;
+}
+
+.number {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.label {
+  font-size: 12px;
+  color: #999;
+}
+
+.message {
+  margin: 10px 0;
+  text-align: center;
+}
+.follow.active {
+  background-color: gray; 
+}
+@media screen and (max-width: 600px) {
+  .profile {
+    padding: 5px;
+  }
+
+  .username {
+    font-size: 16px;
+  }
+
+
+}
+.profile-picture {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: black; /* o el color que prefieras */
+  margin-right: 10px; /* Ajusta el margen según tu preferencia */
+}
+
+    </style>
+</head>
+<body>
+
+    <div class="profile">
+        <div class="header">
+            <div class="profile-picture"></div>
+            <h1 class="username">tuabuelaentangaa</h1>
+            <button class="follow">Seguir</button>
+            <button class="message" onclick="redirectToChat()">Enviar mensaje</button>
+            <button class="more">...</button>
+          </div>
+        <div class="icons">
+          <div class="icon"></div>
+          <div class="icon"></div>
+        </div>
+        <div class="bio">
+          <p class="text">Zgz</p>
+          <p><span class="mention">@thekiddkeo</span> <span class="mention">@ioanna.v</span></p>
+          <p class="followers">javi.rayaa, alvarocaneequee_, _crakox y 12 más siguen esta cuenta</p>
+        </div>
+        <div class="stats">
+          <div class="stat">
+            <p class="number">0</p>
+            <p class="label">publicaciones</p>
+          </div>
+          <div class="stat">
+            <p id="followersCount" class="number">224</p>
+            <p  class="label">seguidores</p>
+           
+          </div>
+          <div class="stat">
+            <p class="number">504</p>
+            <p class="label">seguidos</p>
+          </div>
+        </div>
+        <div class="message">
+          <p class="text">Aún no hay publicaciones</p>
+          <p class="text">Cuando tuabuelaentangaa publique, verás sus fotos y videos aquí.</p>
+        </div>
+      </div>
+      <script>
+document.addEventListener("DOMContentLoaded", function() {
+    var followButton = document.querySelector(".follow");
+    var followersCount = document.getElementById("followersCount");
+    var followerCountValue = 224; // Establece el valor inicial
+
+    followButton.addEventListener("click", function() {
+        if (followButton.textContent === "Seguir") {
+            followButton.textContent = "Dejar de seguir";
+            followButton.style.backgroundColor = "#333";
+            followerCountValue++; // Incrementa el número de seguidores
+        } else {
+            followButton.textContent = "Seguir";
+            followButton.style.backgroundColor = "#00a0ff";
+            followerCountValue--; // Decrementa el número de seguidores
+        }
+
+        // Actualiza el texto con el nuevo número de seguidores
+        followersCount.textContent = followerCountValue + " ";
+    });
+});
+function redirectToChat() {
+    // Redirigir a la página de chatbotmireya.html
+    window.location.href = "chat.html";
+  }
+    </script>
+        </script>
+      
+</body>
+</html>
+
+
+

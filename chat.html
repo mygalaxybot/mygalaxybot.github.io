@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat</title>
+    <style>
+        body {
+            background-color: #222;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            color: white;
+        }
+
+        #chat-container {
+            max-width: 600px;
+            margin: 20px auto;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            background-color: #222;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            overflow: hidden;
+            
+        }
+
+        #header {
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            border-bottom: 1px solid #ccc;
+        }
+
+        #profile-picture {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: black;
+            margin-right: 10px;
+        }
+
+        #user-info {
+            display: flex;
+            flex-direction: column;
+        }
+
+        #user-name {
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        #chat-header {
+            background-color: #00a0ff;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            font-size: 1.5rem;
+            border-bottom: 1px solid #ccc;
+        }
+
+        #messages {
+            overflow-y: auto;
+            max-height: 400px;
+            padding: 10px;
+            border-bottom: 1px solid #ccc;
+        }
+
+        #input-container {
+            display: flex;
+            padding: 10px;
+        }
+
+        #user-input {
+            flex-grow: 2;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-right: 5px;
+            background-color: #333;
+            color: white;
+        }
+
+        #send-button {
+            padding: 8px 15px;
+            background-color: #00a0ff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .message-container {
+            display: flex;
+            margin-bottom: 10px;
+        }
+
+        .user-message {
+            background-color: #00a0ff;
+            color: white;
+            border-radius: 10px;
+            padding: 10px;
+            max-width: 70%;
+            align-self: flex-start;
+        }
+
+        .bot-message {
+            background-color: #333;
+            color: white;
+            border-radius: 10px;
+            padding: 10px;
+            max-width: 70%;
+            align-self: flex-end;
+        }
+
+        .bot-profile-picture {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background-color: black;
+            margin-right: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div id="chat-container">
+        <div id="header">
+            <div id="profile-picture"></div>
+            <div id="user-info">
+                <div id="user-name">Tuabuelaentangaa</div>
+            
+            </div>
+        </div>
+   
+        <div id="messages"></div>
+        <div id="input-container">
+            <input type="text" id="user-input" placeholder="Escribe un mensaje...">
+            <button id="send-button" onclick="sendMessage()">Enviar</button>
+        </div>
+    </div>
+
+    <script>
+        function sendMessage() {
+            var userInput = document.getElementById("user-input").value;
+            var messagesContainer = document.getElementById("messages");
+
+            // Agregar el mensaje del usuario al contenedor de mensajes
+            messagesContainer.innerHTML += '<div class="message-container"><div class="user-message">' + userInput + '</div></div>';
+
+            // Simular respuesta del bot
+            simulateBotResponse(userInput);
+            
+            // Limpiar el campo de entrada del usuario
+            document.getElementById("user-input").value = '';
+
+            // Hacer scroll hacia abajo para mostrar el último mensaje
+            messagesContainer.scrollTop = messagesContainer.scrollHeight;
+        }
+
+        function simulateBotResponse(userInput) {
+            var messagesContainer = document.getElementById("messages");
+            var botResponse;
+
+            // Simular respuesta del bot basada en el mensaje del usuario (ignorando tildes)
+            if (containsIgnoreCaseAndTildes(userInput, "hola")) {
+                botResponse = "pene, digo hola";
+            } else if (containsIgnoreCaseAndTildes(userInput, "qué haces")) {
+                botResponse = "no se gei";
+            } else if (containsIgnoreCaseAndTildes(userInput, "pene")) {
+                botResponse = "me encanta";
+            } else if (containsIgnoreCaseAndTildes(userInput, "gei")) {
+                botResponse = "soy";
+            } else {
+                botResponse = "soy un puto bot no tu esclavo, digo no tengo tanto vocabulario!!!!! pero mi creador es la hostia";
+            }
+
+            // Agregar la respuesta del bot al contenedor de mensajes
+            messagesContainer.innerHTML += '<div class="message-container"><div class="bot-message"><div class="bot-profile-picture"></div>' + botResponse + '</div></div>';
+        }
+
+        function containsIgnoreCaseAndTildes(str, substr) {
+            // Eliminar tildes y luego realizar la comparación
+            return removeAccents(str).toLowerCase().includes(removeAccents(substr).toLowerCase());
+        }
+
+        function removeAccents(str) {
+            // Eliminar tildes de los caracteres acentuados
+            return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+        }
+
+    </script>
+</body>
+</html>
