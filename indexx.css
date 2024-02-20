@@ -47,6 +47,13 @@ body {
             flex: 1; 
             text-align: center;
             padding: 100px 20px;
+
+        }
+        @media screen and (max-width: 600px) {
+            #mainContent {
+                flex-direction: column;
+                align-items: center;
+            }
         }
 
         #contentContainer {
@@ -275,10 +282,30 @@ body {
         }
 
         .card {
-        transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            margin-bottom: 20px;
+            margin-left: auto;
+            margin-right: auto; 
+            display: inline-block;
+            max-width: 400px;  
     }
 
     .card:hover {
         transform: scale(1.05); 
         box-shadow: 0 0 15px lightblue; 
+    }
+    @media screen and (max-width: 768px) {
+        .card {
+            margin-left: auto; 
+            margin-right: auto; 
+            width: 100%; 
+        }
+        .card-header {
+            height: auto; 
+        }
+    }	
+    .card-header {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100px; 
     }
